@@ -24,7 +24,7 @@ p {
 }
 .-section-container section#top {
     position: fixed;
-    top: calc(100vh - 120px);
+    top: calc(100vh - 16vmin - 20px);
     transform: translateX(-100%);
     transition: transform 1s ease;
     font-family: "Nico Moji";
@@ -32,11 +32,11 @@ p {
 .-section-container section#top h2 {
     margin: 0;
     padding: 0;
-    font-size: 36px;
+    font-size: 6vmin;
 }
 .-section-container section#top p {
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 3.7vmin;
+    line-height: 3.7vmin;
 }
 
 .loaded section#top.show {
@@ -102,18 +102,18 @@ p {
 
 .loaded .-title {
     width: 100%;
-    font-size: 28px;
-    height: 40px;
+    font-size: 20px;
+    height: 1.5em;
     background-color: #454545;
     color: white;
 }
 
 .-copyright {
     position: absolute;
-    top: 40px;
+    top: 1.5em;
     margin: 0;
-    background-color: #fff;
-    color: black;
+    background-color: white;
+    color: #454545;
     width: 0;
     height: 18px;
     text-align: center;
@@ -124,8 +124,8 @@ p {
     width: 100%;
     font-size: 14px;
     height: 18px;
-    background-color: c8c8c8;
-    color: black;
+    background-color: white;
+    color: #454545;
 }
 
 .-cover {
