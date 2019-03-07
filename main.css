@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    margin-bottom: 6px;
+    padding: 0;
+}
+
+.-section-container {
+    position: absolute;
+    height: 0;
+    color: white;
+    z-index: 1200;
+}
+.-section-container section#top {
+    position: fixed;
+    top: calc(100vh - 120px);
+    transform: translateX(-100%);
+    transition: transform 1s ease;
+    font-family: "Nico Moji";
+}
+.-section-container section#top h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+}
+.-section-container section#top p {
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.loaded section#top.show {
+    transform: translateX(0);
+}
+
+.-container {
+    width: 100%;
+    height: 100%;
+}
+
+.-container img{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    filter: brightness(0) grayscale(1);
+    transition: filter 1s ease 1s;
+}
+
+.-container.loaded img{
+    filter: brightness(1) grayscale(1);
+}
+
+.-big-square {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: #000;
+    transform-origin: center top;
+    transform: translateX(-50%);
+    transition: transform .2s ease, background-color 1s ease 1s;
+}
+
+.loaded .-big-square {
+    background-color: #f43e43;
+}
+
+.-progress-container {
+    position: absolute;
+    top: -140px;
+    width: 100%;
+    height: 0;
+    text-align: center;
+    transition: opacity 1s ease 1s;
+}
+
+.loaded .-progress-container {
+    opacity: 0;
+}
+
+.-title {
+    margin: 0;
+    background-color: #fff;
+    color: transparent;
+    width: 0;
+    height: 1px;
+    text-align: center;
+    overflow: hidden;
+    transition: width 1s ease, height 1s ease 1s, background-color 0.5s ease 1s, color 0.8s ease 1.2s;
+}
+
+.loaded .-title {
+    width: 100%;
+    font-size: 28px;
+    height: 40px;
+    background-color: #454545;
+    color: white;
+}
+
+.-copyright {
+    position: absolute;
+    top: 40px;
+    margin: 0;
+    background-color: #fff;
+    color: black;
+    width: 0;
+    height: 18px;
+    text-align: center;
+    overflow: hidden;
+    transition: width 0.5s ease 0.5s, height 1s ease 1s, background-color 0.5s ease 1s, color 0.8s ease 1.2s;
+}
+.loaded .-copyright {
+    width: 100%;
+    font-size: 14px;
+    height: 18px;
+    background-color: c8c8c8;
+    color: black;
+}
+
+.-cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+}
