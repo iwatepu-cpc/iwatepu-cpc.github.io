@@ -64,7 +64,7 @@ p {
 .-section-container section#challenge {
     position: fixed;
     top: calc(100vh - 180px);
-    left: calc(100vw - 16vmin);
+    left: calc(100vw - 5vmin);
     transform: translateX(100%);
     transition: transform 0.2s ease;
     font-family: "Nico Moji";
