@@ -16,6 +16,24 @@ p {
     padding: 0;
 }
 
+.-btn {
+    display: inline-block;
+    margin: 0;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    background: #454545;
+    color: #fff;
+    border-bottom: solid 3px #303030;
+    border-right: solid 3px #303030;
+    border-radius: 3px;
+  }
+.-btn:active {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    border-bottom: none;
+    border-right: none;
+}
+
 .-section-container {
     position: absolute;
     height: 0;
@@ -24,9 +42,9 @@ p {
 }
 .-section-container section#top {
     position: fixed;
-    top: calc(100vh - 16vmin - 20px);
+    top: calc(100vh - 16vmin - 32px);
     transform: translateX(-100%);
-    transition: transform 1s ease;
+    transition: transform 0.2s ease;
     font-family: "Nico Moji";
 }
 .-section-container section#top h2 {
@@ -39,8 +57,20 @@ p {
     line-height: 3.7vmin;
 }
 
-.loaded section#top.show {
+.loaded .-section-container.show section#top:target {
     transform: translateX(0);
+}
+
+.-section-container section#challenge {
+    position: fixed;
+    top: calc(100vh - 180px);
+    left: calc(100vw - 16vmin);
+    transform: translateX(100%);
+    transition: transform 0.2s ease;
+    font-family: "Nico Moji";
+}
+.loaded .-section-container.show section#challenge:target {
+    transform: translateX(-100%);
 }
 
 .-container {

@@ -9,6 +9,30 @@
     <link rel="stylesheet" href="main.css">
     <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
     <script src="style.js"></script>
+    <script src="xxxx/answer.js"></script>
+    <script src="logic.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    <script>
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+    "palette": {
+        "popup": {
+        "background": "#454545",
+        "text": "#ffffff"
+        },
+        "button": {
+        "background": "#f43e43"
+        }
+    },
+    "showLink": false,
+    "theme": "edgeless",
+    "content": {
+        "message": "このサイトの一部の機能はCookieを利用しています。",
+        "dismiss": "了解"
+    }
+    })});
+    </script>
 </head>
 <body>
     <div class="-container">
@@ -28,6 +52,13 @@
                 <p>2019/04/06 新入生歓迎会</p>
                 <p>2019/04/16 説明会(1st session)</p>
                 <a href="https://twitter.com/iwatepu_cpc?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @iwatepu_cpc</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <a href="#challenge" class="-btn">チャレンジ</a>
+            </section>
+            <section id="challenge">
+                <h2>CHALLENGE</h2>
+                <input type="text" id="challenge-input">
+                <a href="#top" class="-btn">←</a>
+                <a class="-btn" onclick="sendAnswer();">回答</a>
             </section>
         </div>
     </div>

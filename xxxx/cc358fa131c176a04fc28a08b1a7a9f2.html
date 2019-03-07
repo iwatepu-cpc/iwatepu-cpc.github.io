@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>チャレンジ問題 - 岩手県立大学 競技プログラミングサークル</title>
+    <script src="md5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    <script>
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+    "palette": {
+        "popup": {
+        "background": "#454545",
+        "text": "#ffffff"
+        },
+        "button": {
+        "background": "#f43e43"
+        }
+    },
+    "showLink": false,
+    "theme": "edgeless",
+    "content": {
+        "message": "このサイトの一部の機能はCookieを利用しています。",
+        "dismiss": "了解"
+    }
+    })});
+    </script>
+</head>
+<body>
+    <img src="challenge.png" alt="" width="800px" height="auto">
+    <p>あなたの回答:</p>
+    <textarea rows="5" cols="80" readonly id="yours"></textarea>
+    <p id="correct">判定:　</p>
+    <script>
+        const cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)challenge\s*\=\s*([^;]*).*$)|^.*$/, "$1")
+        document.querySelector('#yours').innerText = cookieValue
+        const hash = md5(cookieValue)
+        const path = location.pathname.substring(6, location.pathname.length-5)
+        const correct = document.querySelector('#correct')
+        if (hash == path) {
+            correct.innerHTML += '正解'
+        } else {
+            correct.innerHTML += '不正解'
+        }
+    </script>
+</body>
+</html>

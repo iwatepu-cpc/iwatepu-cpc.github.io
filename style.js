@@ -17,7 +17,12 @@ function updateSquareSize() {
 
 function updateTitleRotation() {
     const elem = document.querySelector('.-big-square')
-    const theta = updateSquareSize()
+    let theta = updateSquareSize()
+    if (location.hash == '#challenge') {
+        theta = -theta
+        const topSection = document.querySelector('section#top')
+        topSection.classList.remove('show')
+    }
     elem.style.transform = `translateX(-50%) rotateZ(${theta}rad)`
 }
 
@@ -26,20 +31,29 @@ function hideProgressContainer() {
     progressContainer.style.display = 'none'
 }
 
+function afterBeginningTransition(e) {
+    const sectionContainer = document.querySelector('.-section-container')
+    const bigSquare = document.querySelector('.-big-square')
+    bigSquare.ontransitionend = null
+    setTimeout(() => {
+        hideProgressContainer()
+        updateTitleRotation()
+        window.addEventListener('resize', updateTitleRotation)
+        window.addEventListener('hashchange', updateTitleRotation)
+        if (location.hash == '') {
+            location.replace('#top')
+        }
+        sectionContainer.classList.add('show')
+    }, 1000)
+}
+
 window.addEventListener('load', () => {
     updateSquareSize()
     const container = document.querySelector('.-container')
     const bigSquare = document.querySelector('.-big-square')
-    const topSection = document.querySelector('section#top')
-    bigSquare.addEventListener('transitionend', () => {
-        setTimeout(() => {
-            hideProgressContainer()
-            updateTitleRotation()
-            window.addEventListener('resize', updateTitleRotation)
-            topSection.classList.add('show')
-        }, 1000)
-    })
+
+    bigSquare.ontransitionend = afterBeginningTransition
     setTimeout(() => {
         container.classList.add('loaded')
-    }, 1000)    
+    }, 10)
 })
