@@ -34,7 +34,7 @@ function hideProgressContainer() {
 function afterBeginningTransition(e) {
     const sectionContainer = document.querySelector('.-section-container')
     const bigSquare = document.querySelector('.-big-square')
-    bigSquare.ontransitionend = null
+    bigSquare.removeEventListener('transitionend', afterBeginningTransition)
     setTimeout(() => {
         hideProgressContainer()
         updateTitleRotation()
@@ -52,7 +52,7 @@ window.addEventListener('load', () => {
     const container = document.querySelector('.-container')
     const bigSquare = document.querySelector('.-big-square')
 
-    bigSquare.ontransitionend = afterBeginningTransition
+    bigSquare.addEventListener('transitionend', afterBeginningTransition)
     setTimeout(() => {
         container.classList.add('loaded')
     }, 10)
