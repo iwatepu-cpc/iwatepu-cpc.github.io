@@ -62,9 +62,9 @@ p {
 
 .-section-container section#challenge {
     position: fixed;
-    top: calc(100vh - 24vmin);
+    top: calc(100vh - 26vmin);
     left: calc(100vw - 55vmin);
-    transform: translateY(24vmin);
+    transform: translateY(26vmin);
     transition: transform 0.2s ease;
     font-family: "Nico Moji";
 }
