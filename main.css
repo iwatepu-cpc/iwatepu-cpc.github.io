@@ -2,7 +2,6 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
 }
 
 div {
@@ -42,7 +41,7 @@ p {
 }
 .-section-container section#top {
     position: fixed;
-    top: calc(100vh - 16vmin - 32px);
+    top: calc(100vh - 21vmin - 32px);
     transform: translateX(-100%);
     transition: transform 0.2s ease;
     font-family: "Nico Moji";
@@ -63,14 +62,19 @@ p {
 
 .-section-container section#challenge {
     position: fixed;
-    top: calc(100vh - 180px);
-    left: calc(100vw - 5vmin);
-    transform: translateX(100%);
+    top: calc(100vh - 24vmin);
+    left: calc(100vw - 55vmin);
+    transform: translateY(24vmin);
     transition: transform 0.2s ease;
     font-family: "Nico Moji";
 }
+.-section-container section#challenge h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 6vmin;
+}
 .loaded .-section-container.show section#challenge:target {
-    transform: translateX(-100%);
+    transform: translateY(0);
 }
 
 .-container {
