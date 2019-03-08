@@ -41,7 +41,7 @@ p {
 }
 .-section-container section#top {
     position: fixed;
-    top: calc(100vh - 21vmin - 32px);
+    top: calc(100vh - 21vmin - 80px);
     transform: translateX(-100%);
     transition: transform 0.2s ease;
     font-family: "Nico Moji";
