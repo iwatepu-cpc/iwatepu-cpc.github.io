@@ -62,7 +62,7 @@ p {
 
 .-section-container section#challenge {
     position: fixed;
-    top: calc(100vh - 26vmin);
+    top: calc(100vh - 30vmin);
     left: calc(100vw - 55vmin);
     transform: translateY(100vh);
     transition: transform 0.2s ease;
