@@ -33,6 +33,32 @@ p {
     border-right: none;
 }
 
+
+.-bg-container {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transition: 1s ease 1.5s;
+}
+
+.loaded .-bg-container {
+    background-color: #c3c3c3;
+}
+
+.-bg-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 800;
+    transition: opacity 0.25s;
+}
+
+.-bg-container img.show {   
+    opacity: 1;
+    transition: opacity 0.25s;
+}
+
 .-section-container {
     position: absolute;
     height: 0;

@@ -18,10 +18,16 @@ function updateSquareSize() {
 function updateTitleRotation() {
     const elem = document.querySelector('.-big-square')
     let theta = updateSquareSize()
+    const backgroundImages = document.querySelectorAll('.-bg-container img')
     if (location.hash == '#challenge') {
         theta = -theta
         const topSection = document.querySelector('section#top')
         topSection.classList.remove('show')
+        backgroundImages[0].classList.remove('show')
+        backgroundImages[1].classList.add('show')
+    } else {
+        backgroundImages[0].classList.add('show')
+        backgroundImages[1].classList.remove('show')
     }
     elem.style.transform = `translateX(-50%) rotateZ(${theta}rad)`
 }
