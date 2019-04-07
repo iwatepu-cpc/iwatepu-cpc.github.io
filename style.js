@@ -1,3 +1,21 @@
+
+const _loadingMessage = [
+    "今、この瞬間が最高に熱い",
+    "1時間40分がこんなに短いなんて思わなかった",
+    "人生で一番頭を使ったかもしれない",
+    "プログラミングでハイになることってあるんだね",
+    "思考の速度に手が追いつかない",
+    "タイムアップのその瞬間まで考え抜いた",
+    "コンテスト直後のコークほど美味いものは無い",
+]
+
+function setLoadingMessage() {
+    const loading = document.querySelector('.-loading-message')
+    const message = _loadingMessage[Math.floor(Math.random() * _loadingMessage.length)]   
+    loading.innerHTML = `&ldquo;${message}&rdquo;`
+    loading.classList.add('set')
+}
+
 function updateSquareSize() {
     const title = document.querySelector('.-title')
     const copyright = document.querySelector('.-copyright')
@@ -54,12 +72,12 @@ function afterBeginningTransition(e) {
 }
 
 window.addEventListener('load', () => {
+    setLoadingMessage()
     updateSquareSize()
     const container = document.querySelector('.-container')
-    const bigSquare = document.querySelector('.-big-square')
-
-    bigSquare.addEventListener('transitionend', afterBeginningTransition)
+    const copyright = document.querySelector('.-copyright')
+    copyright.addEventListener('transitionend', afterBeginningTransition)
     setTimeout(() => {
         container.classList.add('loaded')
-    }, 10)
+    }, 500)
 })
