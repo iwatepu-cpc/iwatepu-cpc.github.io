@@ -1,16 +1,26 @@
+* { 
+    margin: 0px; 
+    padding: 0px; 
+}
 body{
 	margin:0;
+	padding:0;
 }
 header{
-	background-color: #000080;
+	background-color: #e6e6fa;
+	height:50px;
 	position: fixed;
+	width:100%;
 }
 img{
 	width:80%;
 }
-.wrapper{
-	float:none;
+.main{
+	float:right;
 }
 .menu{
 	float:left;
+}
+.wrapper{
+	float:none;
 }
