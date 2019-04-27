@@ -1,3 +1,22 @@
+body{
+	margin:0px;
+	padding:0;
+}
+header{
+	background-color: #e6e6fa;
+	height:50px;
+	width:100%;
+}
 img{
-	width:100vw;
+	width:80%;
+}
+.main{
+	float:right;
+}
+.menu{
+	float:left;
+}
+.wrapper{
+	float:none;
+	margin:auto;
 }
