@@ -1,15 +1,10 @@
-* { 
-    margin: 0px; 
-    padding: 0px; 
-}
 body{
-	margin:0;
+	margin:0px;
 	padding:0;
 }
 header{
 	background-color: #e6e6fa;
 	height:50px;
-	position: fixed;
 	width:100%;
 }
 img{
@@ -23,4 +18,5 @@ img{
 }
 .wrapper{
 	float:none;
+	margin:auto;
 }
